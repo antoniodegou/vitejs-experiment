@@ -1,9 +1,15 @@
+import 'normalize.css'
+import 'bootstrap/dist/js/bootstrap.js'
+import 'bootstrap/scss/bootstrap.scss'
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import { setupCounter } from './counter.js'
-import * as drag from './node_modules/dragjs/'
-import * as colorjoe from '/node_modules/colorjoe/'
-import  './node_modules/colorjoe/css/colorjoe.css'
+// import javascriptLogo from './javascript.svg'
+// import { setupCounter } from './counter.js'
+// import * as drag from '/node_modules/dragjs/'
+// import * as ONECOLOR from '/node_modules/onecolor/'
+// import * as colorjoe from '/node_modules/colorjoe/'
+// import * as colorjoe from 'colorjoe'
+// import  '/node_modules/colorjoe/css/colorjoe.css'
+
 
 // document.querySelector('#app').innerHTML = `
 //   <div>
@@ -26,16 +32,67 @@ import  './node_modules/colorjoe/css/colorjoe.css'
 // setupCounter(document.querySelector('#counter'))
 
 
-const joe = colorjoe.rgb("my-color", "#FFFFFF");
+// const joe = colorjoe.rgb(
+//   "my-color", 
+//   "#FFFFFF",
+//   [
+//     "alpha",
+//     ["fields",
+//   //  {space: 'RGB', limit: 255, fix: 0},
+//    {space: 'HSL'},
+//   //  'Hex'
+//   //  'hex', 'HSL', "RGB"
+//   ]
+// ]);
 
-joe.on("change", color => console.log("Selecting " + color.css()));
-joe.on("done", color => console.log("Selected " + color.css()));
+// joe.on("change", color => console.log("Selecting " + color.css()));
+// joe.on("done", color => console.log("Selected " + color.css()));
+
+// var val = document.getElementById('rgbValue');
+
+// colorjoe.rgb('rgbPicker').on('change', function(c) {
+//     val.innerHTML = c.css();
+// });
+
+// requirejs(['../dist/colorjoe'], function(colorjoe) {
+//   var val = document.getElementById('rgbValue');
+
+//   colorjoe.rgb('rgbPicker').on('change', function(c) {
+//       val.innerHTML = c.css();
+//   });
+// });
 
 
-requirejs(['../dist/colorjoe'], function(colorjoe) {
-  var val = document.getElementById('rgbValue');
+// requirejs(['/node_modules/colorjoe/dist/colorjoe.js'], function(colorjoe) {
+//   var val = document.getElementById('rgbValue');
 
-  colorjoe.rgb('rgbPicker').on('change', function(c) {
-      val.innerHTML = c.css();
-  });
+//   colorjoe.rgb('rgbPicker').on('change', function(c) {
+//       val.innerHTML = c.css();
+//   });
+// });
+
+// const colInput = document.getElementById("mypick")
+
+// colInput.addEventListener("input", function(e){
+//   // let col = e.target.attributes.value.nodeValue
+//   // console.log(col)
+//   console.log(colInput.value)
+//   document.getElementById("mypicklable").style.backgroundColor = `${colInput.value}`
+// });
+
+const hexInput = document.getElementById("hex_code")
+const form = document.getElementById("myForm")
+
+document.addEventListener('keyup', function(e){
+  let input =  e.target;
+
+ form.reportValidity();
+
+ console.log(input)
+  if(!input.validity.valid) {
+    input.classList.add('invalid');
+  } else {
+   input.classList.remove('invalid');
+  }
+
 });

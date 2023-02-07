@@ -9,9 +9,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "colorjoe": "^4.2.0",
     "vite": "^4.0.0"
   },
   "dependencies": {
-    "colorjoe": "^4.2.0"
+    "bootstrap": "^5.2.3",
+    "normalize.css": "^8.0.1",
+    "sass": "^1.58.0"
   }
 }
