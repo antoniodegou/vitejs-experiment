@@ -1,0 +1,166 @@
+$white-1: hsl(208, 27%, 90%);
+$white-2: hsl(208, 27%, 80%);
+$white-3: hsl(208, 27%, 70%);
+$white-4: hsl(208, 27%, 60%);
+
+$black-1:hsl(208, 27%, 10%);
+$black-2:hsl(208, 27%, 15%);
+$black-3:hsl(208, 27%, 20%);
+$black-4:hsl(208, 27%, 30%);
+
+
+
+$border-width: 3px;
+
+
+
+
+
+@mixin dark-mode {
+    background-color: $black-1;
+    transition: all 0.3s;
+    color: $white-2;
+    input{
+        border: solid $border-width $white-1!important;
+        background-color:$black-1 ;
+    }
+
+    .bottom-border{
+        border-bottom: solid $border-width $white-1!important;
+    }
+
+    .my_switch_label{
+        background: $black-1;
+        border: 3px solid $white-2;
+      }
+    
+      .my_switch_label:after{
+        background: $white-4;
+      }
+    
+      #my_switch:checked + .my_switch_label {
+        background: $white-1;
+      }
+    
+  }
+  
+  @mixin light-mode {
+    background-color: $white-1;
+    color: $black-2;
+    input{
+        border: solid $border-width $black-1!important;
+        background-color:$white-2 ;
+    }
+    .bottom-border{
+        border-bottom: solid $border-width $black-1!important;
+    }
+
+    .my_switch_label{
+        border: solid $border-width $black-1!important;
+    }
+
+    .my_switch_label:after{
+        background: $black-1;
+    }
+    
+    #my_switch:checked + .my_switch_label {
+        background: $white-2;
+    }
+  }
+
+input{
+    border-radius: 0!important;
+}
+
+.dark-mode {
+    @include dark-mode;
+}
+  
+.light-mode {
+    @include light-mode;
+}
+  
+@media (prefers-color-scheme: dark) {
+    body {
+      @include dark-mode;
+    }
+  }
+  
+//   #my_switch::before{
+//     content:" Light Mode";
+//     left: 0;
+//   }
+//   #my_switch::after{
+//     content:" Dark Mode";
+
+//   }
+
+
+// checkbox
+
+#my_switch[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  
+  }
+  
+ .my_switch_label {
+    cursor: pointer;
+    // text-indent: -9999px;
+    width: 90px;
+    height: 38px;
+ 
+    display: block;
+    border-radius: 50px;
+    position: relative;
+    box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.6);
+  }
+
+
+  
+  .my_switch_label:after {
+    content: '';
+    color:white;
+    position: absolute;
+    top: 1.9px;
+    left: 5px;
+    width: 28px;
+    height: 28px;
+    border-radius: 90px;
+    // box-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
+    transition: 0.3s;
+  }
+  
+
+
+  
+  #my_switch:checked + .my_switch_label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  #my_switch:active:after {
+    width: 130px;
+  }
+
+
+
+  .icon-moon, .icon-sun{
+    color: wheat;
+    z-index: 20;
+  }
+
+  .icon-moon{
+    font-size: 30px;
+    position: absolute;
+   left: 4px;
+   top:2px;
+
+  }
+  .icon-sun{
+    position: absolute;
+    right: 5.5px;
+    font-size: 27px;
+    top:2.5px;
+  }

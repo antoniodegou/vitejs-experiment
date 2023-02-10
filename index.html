@@ -1,61 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-<div class="container">
-
-  <form action="" id="myForm">
-    <fieldset class="input-group pb-4 ">
-    <label for="hex-code" class="form-label">HEX</label>
-    <input type="text" id="hex_code" class="form-control" name="hex_code" pattern="#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?" title="in valid hex code"> 
-  </fieldset>
-
-
-    <fieldset class="input-group pb-4 ">
-    <label for="rgb" class="form-label">HEX</label>
-    <input type="text" class="form-control" name="rgb"  id="rgb" pattern="/^rgb\((0|255|25[0-4]|2[0-4]\d|1\d\d|0?\d?\d),(0|255|25[0-4]|2[0-4]\d|1\d\d|0?\d?\d),(0|255|25[0-4]|2[0-4]\d|1\d\d|0?\d?\d)\)$/"  >
-  </fieldset>
-
-    <fieldset class="input-group pb-4 ">
-      <legend>RGB</legend>
-
-      <label for="r" class="form-label">R</label>
-
-      <label for="r" class="form-label">R</label>
-      <input type="number" class="form-control" name="r"  id="r" min="0" max="255" title="from 0 to 255">
-     
-      <label for="g" class="form-label">G</label>
-      <input type="number" class="form-control" name="g" id="g" min="0" max="255">
-
-      <label for="b" class="form-label">B</label>
-      <input type="number" class="form-control" name="b" id="b" min="0" max="255">
-    </fieldset>
-
-    <fieldset class="input-group pb-4 ">
-      <legend>HSL</legend>
-  
-      <label for="h" class="form-label">H</label>
-      <input type="number" class="form-control" name="h"  id="h" min="0" max="255" title="from 0 to 255">
-     
-      <label for="s" class="form-label">S</label>
-      <input type="number" class="form-control" name="s" id="s" min="0" max="255">
-
-      <label for="l" class="form-label">L</label>
-      <input type="number" class="form-control" name="l" id="l" min="0" max="255">
-    </fieldset>
-
-    <fieldset class="input-group  ">
-    <label id="mypicklable" for="mypick" class="form-label">COLOUR PICKER</label>
-    <input id="mypick" class="form-control" type="color"  name="head">
-  </fieldset>
-  </form>
-
-</div>
-    <script type="module" src="/main.js"></script>
-  </body>
+   <head>
+      <meta charset="UTF-8" />
+      <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Vite App</title>
+      <link rel="stylesheet" href="https://i.icomoon.io/public/temp/5f3197b56b/madyardicons/style.css">
+   </head>
+   <body class="dark-mode">
+      <div class="container-fluid  ">
+        <section class="bottom-border row pt-2  ">
+            <div class="d-flex col ps-4">
+              <h1>GradList</h1>
+            </div>
+            <div class="d-flex col  justify-content-around">
+              <input  type="checkbox"  id="my_switch">
+              <label class="my_switch_label fs1" for="my_switch"> 
+                <div> 
+                    <span class="icon-moon"></span> 
+                    <span class="icon-sun"></span>
+                </div> 
+              </label>
+            </div>
+        </section>
+         <section class="bottom-border pt-2">
+            <form action="" id="myForm">
+               <label for="hex-code" class="form-label">HEX</label>
+               <input type="text" id="hex_code" class="form-control" name="hex_code" pattern="#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?" title="in valid hex code"> 
+               <fieldset class="input-group pb-4 ">
+                  <label for="r" class="form-label">R</label>
+                  <input type="number" class="form-control" name="r"  id="r" min="0" max="255" title="from 0 to 255">
+                  <label for="g" class="form-label">G</label>
+                  <input type="number" class="form-control" name="g" id="g" min="0" max="255">
+                  <label for="b" class="form-label">B</label>
+                  <input type="number" class="form-control" name="b" id="b" min="0" max="255">
+               </fieldset>
+               <fieldset class="input-group pb-4 ">
+                  <label for="h" class="form-label">H</label>
+                  <input type="number" class="form-control" name="h"  id="h" min="0" max="255" title="from 0 to 255">
+                  <label for="s" class="form-label">S</label>
+                  <input type="number" class="form-control" name="s" id="s" min="0" max="255">
+                  <label for="l" class="form-label">L</label>
+                  <input type="number" class="form-control" name="l" id="l" min="0" max="255">
+               </fieldset>
+               <fieldset class="input-group  ">
+                  <label id="mypicklable" for="mypick" class="form-label">COLOUR PICKER</label>
+                  <input id="mypick" class="form-control" type="color"  name="head">
+               </fieldset>
+            </form>
+         </section>
+      </div>
+      <script type="module" src="/main.js"></script>
+   </body>
 </html>
