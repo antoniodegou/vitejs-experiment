@@ -60,7 +60,7 @@ DEFINE COLOURS FOR COLOUR MODES
       }
 
       #mypick::before{
-        background-color: $white-4;
+        background-color: $black-4;
         color: wheat;
     }
     
@@ -86,7 +86,7 @@ DEFINE COLOURS FOR COLOUR MODES
     }
     
     #my_switch:checked + .my_switch_label {
-        background: $white-2;
+        background: $white-4;
     }
     #mypick::before{
       background-color: $black-1;
@@ -169,3 +169,98 @@ fonts
   // // fusv-disable
   // $tooltip-arrow-color:               null; // Deprecated in Bootstrap 5.2.0 for CSS variables
   // fusv-enable
+
+
+  @font-face {
+    font-family: 'ClashDisplay-Variable';
+    src: url('/src/fonts/ClashDisplay-Variable.woff2') format('woff2'),
+         url('/src/fonts/ClashDisplay-Variable.woff') format('woff'),
+         url('/src/fonts/ClashDisplay-Variable.ttf') format('truetype');
+         font-weight: 200 700;
+         font-display: swap;
+         font-style: normal;
+  }
+  
+  
+  @font-face {
+    font-family: 'ClashDisplay-Extralight';
+    src: url('/src/fonts/ClashDisplay-Extralight.woff2') format('woff2'),
+         url('/src/fonts/ClashDisplay-Extralight.woff') format('woff'),
+         url('/src/fonts/ClashDisplay-Extralight.ttf') format('truetype');
+         font-weight: 200;
+         font-display: swap;
+         font-style: normal;
+  }
+  
+  
+  @font-face {
+    font-family: 'ClashDisplay-Light';
+    src: url('/src/fonts/ClashDisplay-Light.woff2') format('woff2'),
+         url('/src/fonts/ClashDisplay-Light.woff') format('woff'),
+         url('/src/fonts/ClashDisplay-Light.ttf') format('truetype');
+         font-weight: 300;
+         font-display: swap;
+         font-style: normal;
+  }
+  
+  
+  @font-face {
+    font-family: 'ClashDisplay-Regular';
+    src: url('/src/fonts/ClashDisplay-Regular.woff2') format('woff2'),
+         url('/src/fonts/ClashDisplay-Regular.woff') format('woff'),
+         url('/src/fonts/ClashDisplay-Regular.ttf') format('truetype');
+         font-weight: 400;
+         font-display: swap;
+         font-style: normal;
+  }
+  
+  
+  @font-face {
+    font-family: 'ClashDisplay-Medium';
+    src: url('/src/fonts/ClashDisplay-Medium.woff2') format('woff2'),
+         url('/src/fonts/ClashDisplay-Medium.woff') format('woff'),
+         url('/src/fonts/ClashDisplay-Medium.ttf') format('truetype');
+         font-weight: 500;
+         font-display: swap;
+         font-style: normal;
+  }
+  
+  
+  @font-face {
+    font-family: 'ClashDisplay-Semibold';
+    src: url('/src/fonts/ClashDisplay-Semibold.woff2') format('woff2'),
+         url('/src/fonts/ClashDisplay-Semibold.woff') format('woff'),
+         url('/src/fonts/ClashDisplay-Semibold.ttf') format('truetype');
+         font-weight: 600;
+         font-display: swap;
+         font-style: normal;
+  }
+  
+  
+  @font-face {
+    font-family: 'ClashDisplay-Bold';
+    src: url('/src/fonts/ClashDisplay-Bold.woff2') format('woff2'),
+         url('/src/fonts/ClashDisplay-Bold.woff') format('woff'),
+         url('/src/fonts/ClashDisplay-Bold.ttf') format('truetype');
+         font-weight: 700;
+         font-display: swap;
+         font-style: normal;
+  }
+  
+
+  html, input{
+    font-family: 'ClashDisplay-Regular';
+  }
+
+  legend{
+
+    font-size: .8rem;
+  }
+
+  input, legend, h1{
+    font-family: 'ClashDisplay-Bold';
+  }
+
+  h1{
+    text-transform: uppercase;
+  }

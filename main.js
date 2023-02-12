@@ -1,8 +1,5 @@
 import 'normalize.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import "@popperjs/core"
-// import $ from 'jquery/dist/jquery'
-
 import * as bootstrap from 'bootstrap'
 import './style.scss'
 
@@ -20,7 +17,7 @@ __________ */
   const body = document.body;
   const btn = document.getElementById("my_switch");
   const preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  console.log(preferenceQuery)
+
   const addDarkMode = () => {
     body.classList.remove("light-mode");
     body.classList.add("dark-mode");
@@ -40,7 +37,7 @@ __________ */
   btn.addEventListener("change", toggleTheme);
   preferenceQuery.addEventListener("change", checkPreference);
   
-  // (() => checkPreference())();
+  (() => checkPreference())();
 
 
 
