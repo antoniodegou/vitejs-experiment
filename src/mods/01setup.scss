@@ -1,3 +1,7 @@
+/* ------
+Colour Variables
+-------*/
+
 $white-1: hsl(208, 27%, 90%);
 $white-2: hsl(208, 27%, 80%);
 $white-3: hsl(208, 27%, 70%);
@@ -8,21 +12,34 @@ $black-2:hsl(208, 27%, 15%);
 $black-3:hsl(208, 27%, 20%);
 $black-4:hsl(208, 27%, 30%);
 
-
+/* ------
+Number Variables
+-------*/
 
 $border-width: 3px;
+$border-radius: 50px;
 
 
 
-
+/* ------
+DEFINE COLOURS FOR COLOUR MODES
+-------*/
 
 @mixin dark-mode {
     background-color: $black-1;
     transition: all 0.3s;
     color: $white-2;
+    border-color: $white-1!important;
+
+
     input{
-        border: solid $border-width $white-1!important;
-        background-color:$black-1 ;
+        border: solid $border-width $white-1 !important;
+        background-color:$black-2 ;
+        color: $white-1;
+    }
+
+    input:focus{
+        background-color: pink;
     }
 
     .bottom-border{
@@ -41,6 +58,11 @@ $border-width: 3px;
       #my_switch:checked + .my_switch_label {
         background: $white-1;
       }
+
+      #mypick::before{
+        background-color: $white-4;
+        color: wheat;
+    }
     
   }
   
@@ -66,11 +88,13 @@ $border-width: 3px;
     #my_switch:checked + .my_switch_label {
         background: $white-2;
     }
+    #mypick::before{
+      background-color: $black-1;
+      color: wheat;
+  }
   }
 
-input{
-    border-radius: 0!important;
-}
+
 
 .dark-mode {
     @include dark-mode;
@@ -86,81 +110,62 @@ input{
     }
   }
   
-//   #my_switch::before{
-//     content:" Light Mode";
-//     left: 0;
-//   }
-//   #my_switch::after{
-//     content:" Dark Mode";
 
-//   }
+/* ------
+fonts 
+-------*/
 
-
-// checkbox
-
-#my_switch[type=checkbox]{
-    height: 0;
-    width: 0;
-    visibility: hidden;
-  
+@font-face {
+    font-family: 'icomoon';
+    src:  url('/src/fonts/icomoon.eot?s1ttcs');
+    src:  url('/src/fonts/icomoon.eot?s1ttcs#iefix') format('embedded-opentype'),
+      url('/src/fonts/icomoon.ttf?s1ttcs') format('truetype'),
+      url('/src/fonts/icomoon.woff?s1ttcs') format('woff'),
+      url('/src/fonts/icomoon.svg?s1ttcs#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
   }
   
- .my_switch_label {
-    cursor: pointer;
-    // text-indent: -9999px;
-    width: 90px;
-    height: 38px;
- 
-    display: block;
-    border-radius: 50px;
-    position: relative;
-    box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.6);
-  }
-
-
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
   
-  .my_switch_label:after {
-    content: '';
-    color:white;
-    position: absolute;
-    top: 1.9px;
-    left: 5px;
-    width: 28px;
-    height: 28px;
-    border-radius: 90px;
-    // box-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
-    transition: 0.3s;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
+  .icon-sun:before {
+    content: "\e900";
+  }
+  .icon-moon:before {
+    content: "\e901";
+  }
+
+  .icon-eyedropper:before {
+    content: "\e90a";
+  }
 
 
+  // $tooltip-font-size:                 $font-size-sm;
+  // $tooltip-max-width:                 200px;
+  // $tooltip-color:                     $white;
+
+  // $tooltip-border-radius:             $border-radius;
+  // $tooltip-opacity:                   .9;
+  // $tooltip-padding-y:                 $spacer * .25;
+  // $tooltip-padding-x:                 $spacer * .5;
+  // $tooltip-margin:                    null; // TODO: remove this in v6
   
-  #my_switch:checked + .my_switch_label:after {
-    left: calc(100% - 5px);
-    transform: translateX(-100%);
-  }
-  
-  #my_switch:active:after {
-    width: 130px;
-  }
-
-
-
-  .icon-moon, .icon-sun{
-    color: wheat;
-    z-index: 20;
-  }
-
-  .icon-moon{
-    font-size: 30px;
-    position: absolute;
-   left: 4px;
-   top:2px;
-
-  }
-  .icon-sun{
-    position: absolute;
-    right: 5.5px;
-    font-size: 27px;
-    top:2.5px;
-  }
+  // $tooltip-arrow-width:               .8rem;
+  // $tooltip-arrow-height:              .4rem;
+  // // fusv-disable
+  // $tooltip-arrow-color:               null; // Deprecated in Bootstrap 5.2.0 for CSS variables
+  // fusv-enable

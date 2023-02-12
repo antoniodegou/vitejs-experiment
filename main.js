@@ -1,13 +1,21 @@
 import 'normalize.css'
-import 'bootstrap/dist/js/bootstrap.js'
-import 'bootstrap/scss/bootstrap.scss'
+import 'bootstrap/dist/css/bootstrap.min.css'
+// import "@popperjs/core"
+// import $ from 'jquery/dist/jquery'
+
+import * as bootstrap from 'bootstrap'
 import './style.scss'
+
+
+
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
 
 /* __________
 -- DARK MODE --
 __________ */ 
-
-
 
   const body = document.body;
   const btn = document.getElementById("my_switch");
@@ -48,7 +56,7 @@ document.addEventListener('keyup', function(e){
 
  form.reportValidity();
 
- console.log(input)
+//  console.log(input)
   if(!input.validity.valid) {
     input.classList.add('invalid');
   } else {

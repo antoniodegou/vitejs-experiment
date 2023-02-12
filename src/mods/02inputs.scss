@@ -1,0 +1,175 @@
+input{
+    border-radius: 0!important;
+}
+
+
+  .custom-tooltip.tooltip > .tooltip-inner{
+    background: wheat;
+    color: $black-1;
+    border-radius: 0;
+    box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.6);
+
+  }
+
+  .custom-tooltip.tooltip > .tooltip-arrow::before{
+    color: $black-1;
+    border-top-color: wheat;
+
+  }
+
+
+
+
+/* ------
+CHECKBOX
+-------*/
+
+#my_switch[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+ .my_switch_label {
+    cursor: pointer;
+    // text-indent: -9999px;
+    width: 90px;
+    height: 38px;
+ 
+    display: block;
+    border-radius: $border-radius;
+    position: relative;
+    box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.6);
+  }
+
+
+  
+  .my_switch_label:after {
+    content: '';
+    color:white;
+    position: absolute;
+    top: 1.9px;
+    left: 5px;
+    width: 28px;
+    height: 28px;
+    border-radius: 90px;
+    // box-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
+    transition: 0.3s;
+  }
+  
+
+
+  
+  #my_switch:checked + .my_switch_label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  #my_switch:active:after {
+    width: 130px;
+  }
+
+
+
+  .icon-moon, .icon-sun{
+    color: wheat;
+    z-index: 20;
+  }
+
+  .icon-moon{
+    font-size: 30px;
+    position: absolute;
+   left: 4px;
+   top:2px;
+
+  }
+  .icon-sun{
+    position: absolute;
+    right: 5.5px;
+    font-size: 27px;
+    top:2.5px;
+  }
+
+  /*
+  colour piker
+  */
+
+  #mypick{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    // width:100px!important;
+    height: 42px!important;
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    // margin:0;
+    padding:0;
+    border-radius: $border-radius!important;
+    }
+    
+    #mypick::-moz-color-swatch{
+      /* border-radius:15px; */
+    //   padding: 0.375rem 0.75rem;
+      border:none;
+      border: 0px solid black;
+      border-radius: $border-radius!important;
+    //   height:100%!important;
+      
+    }
+    
+    #mypick::-webkit-color-swatch{
+      /* border-radius:15px; */
+      border:none;
+      border: 0px solid black;
+      border-radius: $border-radius!important;
+    }
+
+    #mypick::-webkit-color-swatch::before,     #mypick::-moz-color-swatch::after{
+        position: absolute;
+        left:0;
+        top: 0;
+        z-index: 1000!important;
+    }
+    
+    #mypick::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+    #mypick::before{
+        position: absolute;
+        content: "\e90a";
+        font-family: 'icomoon';
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        margin: auto;
+        top: 0; left: 0; bottom: 0; right: 0;
+        box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.6);
+        padding-top: 3px;
+
+    }
+
+
+    
+
+  /*
+  colour piker
+  */
+.my_submit{
+    border-radius: $border-radius!important;
+    color: wheat;
+    text-transform: uppercase;
+}
+    
+    /* --- END: Style input type colour --- */
+    
+    .invalid{
+      border: 3px solid red!important;
+    }
+    
+    .valid{
+      border: 3px solid green;
+    }
+
